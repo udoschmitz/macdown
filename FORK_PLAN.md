@@ -16,7 +16,11 @@
 - **Nächster konkreter Schritt:** Abschnitt 7, Schritt 1–6 — das *unveränderte* MacDown bauen und starten. Noch nichts davon ist passiert (geprüft 2026-10-06): kein `Pods/`, kein DerivedData-Build, kein Feature-Branch, Klon steht auf Upstream-Commit `3e2a2bf`.
 - **Achtung, Verwechslungsgefahr:** Die App in `/Applications/MacDown.app` ist **nicht** aus diesem Repo gebaut. Sie ist eine per Safari geladene Fremd-Build (Version 1.0.0, signiert von „Developer ID Application: Mass Metal, LLC (L2V57226NH)“, Quarantäne-Flag gesetzt; geprüft 2026-10-06). Unsere eigene Build hat dieselbe Bundle-ID `com.uranusjr.macdown` → beim Testen **immer den Pfad der frisch gebauten App starten** und mit `ps aux | grep MacDown` prüfen, welche Kopie läuft. Wie wir mit der installierten Kopie umgehen (ersetzen? daneben behalten?), ist noch offen — siehe Abschnitt 8.
 - **Branch:** Gearbeitet wird auf `feature/reader-search-zoom` (angelegt 2026-10-18, erster Commit = diese Datei). `master` bleibt unverändert auf Upstream `3e2a2bf`.
-- **Backup:** Das Repo liegt bewusst außerhalb der Nextcloud und hat noch **kein eigenes Remote** (`origin` = Upstream `MacDownApp/macdown`, dorthin wird nie gepusht). Der Stand existiert also nur auf diesem Mac. Ein eigenes Remote (Udos Gitea, ggf. GitHub-Fork) kommt mit dem Veröffentlichen — siehe Abschnitt 7 unten.
+- **Remotes (seit 2026-10-18):**
+  - `origin` = **öffentlicher GitHub-Fork** `https://github.com/udoschmitz/macdown` — hierhin wird gepusht. Der Feature-Branch trackt `origin/feature/reader-search-zoom`.
+  - `upstream` = Original `MacDownApp/macdown`, **nur zum Holen**. Die Push-URL ist absichtlich auf `DISABLED-never-push-to-upstream` gesetzt, damit nie versehentlich etwas ans Original geht.
+- **Warum GitHub statt Udos Gitea:** MacDown lebt auf GitHub; ein GitHub-Fork bleibt sichtbar mit dem Original verknüpft (Fork-Liste, Upstream-Änderungen direkt übernehmbar) und ist ohnehin der Ort fürs Veröffentlichen. Die Regel „auf beide Giteas“ gilt nur für Kunden-Server-Projekte, nicht hierfür. Ein GitHub-Fork eines öffentlichen Repos ist **zwangsläufig öffentlich** — Udo hat das bewusst so entschieden, inklusive dieser Datei (die Apple-Team-IDs darin sind nicht geheim, sie stehen in jeder signierten App).
+- **Default-Branch des Forks** ist (noch) `master` wie im Original, nicht `main` wie in Abschnitt 7 ursprünglich notiert. Umbenennen ist optional und nicht entschieden.
 
 ---
 
