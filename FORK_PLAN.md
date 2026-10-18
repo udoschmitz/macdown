@@ -15,7 +15,8 @@
 - **Umgesetzt wird in einer späteren Session**, nicht sofort.
 - **Nächster konkreter Schritt:** Abschnitt 7, Schritt 1–6 — das *unveränderte* MacDown bauen und starten. Noch nichts davon ist passiert (geprüft 2026-10-06): kein `Pods/`, kein DerivedData-Build, kein Feature-Branch, Klon steht auf Upstream-Commit `3e2a2bf`.
 - **Achtung, Verwechslungsgefahr:** Die App in `/Applications/MacDown.app` ist **nicht** aus diesem Repo gebaut. Sie ist eine per Safari geladene Fremd-Build (Version 1.0.0, signiert von „Developer ID Application: Mass Metal, LLC (L2V57226NH)“, Quarantäne-Flag gesetzt; geprüft 2026-10-06). Unsere eigene Build hat dieselbe Bundle-ID `com.uranusjr.macdown` → beim Testen **immer den Pfad der frisch gebauten App starten** und mit `ps aux | grep MacDown` prüfen, welche Kopie läuft. Wie wir mit der installierten Kopie umgehen (ersetzen? daneben behalten?), ist noch offen — siehe Abschnitt 8.
-- **Diese Datei ist noch nicht in Git** (untracked) und das Repo liegt bewusst außerhalb der Nextcloud → sie hat derzeit **kein Backup**. Beim Anlegen des Feature-Branches als Erstes committen.
+- **Branch:** Gearbeitet wird auf `feature/reader-search-zoom` (angelegt 2026-10-18, erster Commit = diese Datei). `master` bleibt unverändert auf Upstream `3e2a2bf`.
+- **Backup:** Das Repo liegt bewusst außerhalb der Nextcloud und hat noch **kein eigenes Remote** (`origin` = Upstream `MacDownApp/macdown`, dorthin wird nie gepusht). Der Stand existiert also nur auf diesem Mac. Ein eigenes Remote (Udos Gitea, ggf. GitHub-Fork) kommt mit dem Veröffentlichen — siehe Abschnitt 7 unten.
 
 ---
 
